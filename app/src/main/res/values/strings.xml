@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">card-settings-compose</string>
+
+    <string name="banner_text">Clash</string>
+</resources>

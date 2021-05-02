@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="?selectableItemBackground"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView android:layout_width="24dp"
+               android:layout_height="24dp"
+               android:layout_margin="16dp"
+               android:id="@+id/item_icon"
+               android:layout_gravity="center_vertical"
+               app:tint="@android:color/background_dark"
+               android:src="@drawable/baseline_feedback_white_24dp"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:layout_marginTop="4dp"
+              android:layout_marginBottom="4dp"
+              android:layout_marginStart="8dp"
+              android:textSize="18sp"
+              android:id="@+id/item_title"
+              android:text="Logs"/>
+
+</LinearLayout>
