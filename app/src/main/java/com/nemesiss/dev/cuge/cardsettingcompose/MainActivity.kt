@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             ListItemSpec {
                 iconRes = R.drawable.baseline_settings_white_24dp
-                title = "About"
+                title = "Setting"
             }
 
             ListItemSpec {
