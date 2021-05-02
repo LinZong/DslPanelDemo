@@ -8,8 +8,6 @@ internal class CardItemViewHolder(itemView: View) : ItemSpecHolder<CardItemSpec>
 
     private val binding = CardItemBinding.bind(itemView)
 
-    private var lastBackground = -1
-
     override fun applySpec(spec: CardItemSpec) {
 
         binding.apply {
@@ -20,10 +18,8 @@ internal class CardItemViewHolder(itemView: View) : ItemSpecHolder<CardItemSpec>
 
             spec.background
                 .takeIf(POSITIVE_RES_ID)
-                ?.takeIf { curr -> lastBackground != curr }
                 ?.apply {
-                    cardWrapper.setBackgroundResource(this);
-                    lastBackground = this
+                    handleBackground(cardWrapper, this)
                 }
 
             spec.iconTint.takeIf(POSITIVE_RES_ID)

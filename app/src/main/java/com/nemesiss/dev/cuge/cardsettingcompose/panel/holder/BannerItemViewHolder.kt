@@ -15,7 +15,9 @@ internal class BannerItemViewHolder(itemView: View) :
         binding.apply {
             bannerLogo.setImageResource(spec.iconRes)
             bannerText.text = spec.title
-            spec.background.takeIf { resId -> resId != -1 }?.apply { root.setBackgroundResource(this) }
+            spec.background.takeIf { resId -> resId != -1 }?.apply {
+                handleBackground(root, this)
+            }
             val onClick = spec.onClick
             if (onClick != null) {
                 root.apply {
