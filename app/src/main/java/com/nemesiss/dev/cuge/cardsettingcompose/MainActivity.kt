@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 
     private val running get() = runningJob != null
 
-    private val state = ForwardingState()
+    private val state = CountingState()
 
     private val counter = MutableLiveData(0)
 
-    private lateinit var panel: PanelItemScope<ForwardingState>
+    private lateinit var panel: PanelItemScope<CountingState>
 
-    private class ForwardingState : SpecState() {
+    private class CountingState : SpecState() {
         var switchButton = "Stopped"
         var hint = "Tap to start"
         var icon = R.drawable.baseline_block_white_24dp
