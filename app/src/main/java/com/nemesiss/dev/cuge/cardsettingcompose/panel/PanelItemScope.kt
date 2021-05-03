@@ -1,5 +1,6 @@
 package com.nemesiss.dev.cuge.cardsettingcompose.panel
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import com.nemesiss.dev.cuge.cardsettingcompose.panel.spec.BannerItemSpec
 import com.nemesiss.dev.cuge.cardsettingcompose.panel.spec.CardItemSpec
 import com.nemesiss.dev.cuge.cardsettingcompose.panel.spec.ItemSpec
 import com.nemesiss.dev.cuge.cardsettingcompose.panel.spec.ListItemSpec
+import kotlin.system.measureTimeMillis
 
 abstract class SpecState
 
@@ -108,10 +110,13 @@ class PanelItemScope<T : SpecState> private constructor(private var state: T,
     }
 
     private fun runDsl() {
-        banners.clear()
-        cards.clear()
-        items.clear()
-        dsl(this)
+        val walkDslTime = measureTimeMillis {
+            banners.clear()
+            cards.clear()
+            items.clear()
+            dsl(this)
+        }
+        Log.w("Panel", "Walk dsl cost: $walkDslTime mills.")
     }
 
     private fun collectSpecs(): List<ItemSpec> {
